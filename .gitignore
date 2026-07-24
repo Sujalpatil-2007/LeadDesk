@@ -1,0 +1,20 @@
+# Node modules
+**/node_modules
+
+# Environment files
+**/.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build folders
+client/dist
+server/dist
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vite
+client/.vite
