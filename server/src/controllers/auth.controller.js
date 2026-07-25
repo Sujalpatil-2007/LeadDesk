@@ -28,7 +28,7 @@ exports.loginAdmin = async (req, res) => {
     // Find Admin
     const admin = await Admin.findOne({ email });
     console.log("Request Body:", req.body);
-console.log("Admin Found:", admin);
+    console.log("Admin Found:", admin);
 
     if (!admin) {
       return res.status(401).json({
@@ -55,7 +55,7 @@ console.log("Admin Found:", admin);
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -76,8 +76,8 @@ console.log("Admin Found:", admin);
 };
 
 /**
-  * - Get Logged-in Admin
-  * - GET /api/auth/me
+ * - Get Logged-in Admin
+ * - GET /api/auth/me
  */
 
 exports.getMe = async (req, res) => {
@@ -104,13 +104,15 @@ exports.getMe = async (req, res) => {
 };
 
 /**
-  * - Logout Admin
-  * - POST /api/auth/logout
+ * - Logout Admin
+ * - POST /api/auth/logout
  */
 
 exports.logoutAdmin = async (req, res) => {
   res.cookie("token", "", {
     httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     expires: new Date(0),
   });
 
