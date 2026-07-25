@@ -8,11 +8,11 @@ A full-stack Lead Management System built with the MERN Stack as part of the Dig
 
 ### Frontend
 
-(Add Vercel URL)
+https://lead-desk-orcin.vercel.app
 
 ### Backend
 
-(Add Render URL)
+https://leaddesk-mjce.onrender.com
 
 ---
 
@@ -20,11 +20,13 @@ A full-stack Lead Management System built with the MERN Stack as part of the Dig
 
 ### Landing Page
 
-(Add Screenshot)
+<img width="1888" height="910" alt="image" src="https://github.com/user-attachments/assets/35f7f9a8-754c-4787-aebc-2e1c9a711148" />
+
 
 ### Admin Dashboard
 
-(Add Screenshot)
+<img width="1572" height="801" alt="image" src="https://github.com/user-attachments/assets/c53d99e6-4138-4730-a4d1-ef99d3345046" />
+
 
 ---
 
@@ -144,7 +146,7 @@ PATCH /api/leads/:id/status
 ## Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Sujalpatil-2007/LeadDesk.git
 ```
 
 ---
@@ -190,7 +192,7 @@ CLIENT_URL=http://localhost:5173
 ## Client
 
 ```
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=http://localhost:3000/api
 ```
 
 ---
