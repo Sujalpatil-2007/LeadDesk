@@ -10,24 +10,28 @@ import StatusFilter from "../components/StatusFilter";
 
 function Dashboard() {
   const [leads, setLeads] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("All");
 
   const getLeads = async () => {
     try {
-      
+      setLoading(true);
+
       const { data } = await api.get(`/api/lead?search=${search}&status=${status}`);
 
       setLeads(data.leads);
     } catch (error) {
       toast.error("Failed to fetch leads");
-    } 
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     getLeads();
-  }, [search, status])
+  }, [search, status]);
+
 
   return (
     <div className="min-h-screen bg-slate-100">
@@ -46,6 +50,6 @@ function Dashboard() {
       </div>
     </div>
   );
-
+}
 
 export default Dashboard;
