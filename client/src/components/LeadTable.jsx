@@ -83,7 +83,7 @@ function LeadTable({ leads, getLeads }) {
               </td>
 
               <td className="px-6 py-4">
-                {new Date(lead.createdAt).toLocaleDateString()}
+                {new Date(lead.createdAt).toLocaleString()}
               </td>
             </tr>
           ))}
