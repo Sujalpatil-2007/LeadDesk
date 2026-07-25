@@ -18,7 +18,7 @@ function Dashboard() {
     try {
       setLoading(true);
 
-      const { data } = await api.get(`/lead?search=${search}&status=${status}`);
+      const { data } = await api.get(`/api/lead?search=${search}&status=${status}`);
 
       setLeads(data.leads);
     } catch (error) {

@@ -9,7 +9,7 @@ function LeadTable({ leads, getLeads }) {
     if (!confirmUpdate) return;
 
     try {
-      const { data } = await api.patch(`/lead/${id}/status`, {
+      const { data } = await api.patch(`/api/lead/${id}/status`, {
         status,
       });
 

@@ -10,7 +10,7 @@ function Topbar() {
   useEffect(() => {
     const getAdmin = async () => {
       try {
-        const { data } = await api.get("/auth/me");
+        const { data } = await api.get("/api/auth/me");
         setAdmin(data.admin);
       } catch (error) {
         console.log(error);
@@ -22,7 +22,7 @@ function Topbar() {
 
   const logout = async () => {
     try {
-      await api.post("/auth/logout");
+      await api.post("/api/auth/logout");
       toast.success("Logged out successfully");
       navigate("/login");
     } catch (error) {

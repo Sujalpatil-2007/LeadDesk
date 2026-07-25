@@ -31,7 +31,7 @@ function LeadForm() {
     try {
       setLoading(true);
 
-      const { data } = await api.post("/lead", formData);
+      const { data } = await api.post("/api/lead", formData);
 
       toast.success(data.message);
 

@@ -30,7 +30,7 @@ function Login() {
     try {
       setLoading(true);
 
-      const { data } = await api.post("/auth/login", formData);
+      const { data } = await api.post("/api/auth/login", formData);
 
       toast.success(data.message);
 
